@@ -12,9 +12,9 @@
 	<description>app-manager</description>
 
 	<modules>
-		<module>user-manager-api</module>
-		<module>user-manager-service</module>
-		<module>user-manager-web</module>
+		<module>app-manager-api</module>
+		<module>app-manager-service</module>
+		<module>app-manager-web</module>
 	</modules>
 
 	<properties>

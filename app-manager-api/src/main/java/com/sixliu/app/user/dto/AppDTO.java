@@ -1,7 +1,5 @@
 package com.sixliu.app.user.dto;
 
-import java.util.Set;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

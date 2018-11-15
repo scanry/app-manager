@@ -44,7 +44,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserDTO getByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return Convertor.convert(userDao.getByName(name), () -> new UserDTO());
 	}
 }

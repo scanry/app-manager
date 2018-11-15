@@ -1,5 +1,6 @@
 package com.sixliu.app.util;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Base64Utils;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.util.Base64Utils;
 public class Base64UtilsTest {
 
 	public static void main(String[] args) {
-		System.out.println(Base64Utils.encodeToString("app:$2a$10$fVZn7fxncgFSVhrYf.KEeOwl7DbaLsNV2NxJg.g6/40TWMUi7rhWu".getBytes()));
+		System.out.println("base64:"+Base64Utils.encodeToString("37dzsk9n5w".getBytes()));
+		System.out.println("password:"+new BCryptPasswordEncoder().encode("37dzsk9n5w"));
 	}
-
 }

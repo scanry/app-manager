@@ -1,10 +1,12 @@
 package com.sixliu.app.user.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,15 +21,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @describe TODO
  */
 @Configuration
+@EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-	public WebSecurityConfig() {
-		super(true);
-	}
-	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -42,6 +41,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
+
+	@Override
+	public void configure(HttpSecurity http) throws Exception {
+		http.formLogin().usernameParameter("userName").passwordParameter("password");
+		http.authorizeRequests().antMatchers("/oauth/token", "/oauth/authrize").permitAll().anyRequest()
+				.authenticated();
 	}
 
 	@Override

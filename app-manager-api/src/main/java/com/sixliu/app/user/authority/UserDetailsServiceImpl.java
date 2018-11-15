@@ -89,17 +89,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		@Override
 		public boolean isAccountNonExpired() {
-			return user.getStatus() == UserStatus.EXPIRED;
+			return user.getStatus() != UserStatus.EXPIRED;
 		}
 
 		@Override
 		public boolean isAccountNonLocked() {
-			return user.getStatus() == UserStatus.LOCKED;
+			return user.getStatus() != UserStatus.LOCKED;
 		}
 
 		@Override
 		public boolean isCredentialsNonExpired() {
-			return user.getStatus() == UserStatus.DISCARDED;
+			return isEnabled();
 		}
 
 		@Override

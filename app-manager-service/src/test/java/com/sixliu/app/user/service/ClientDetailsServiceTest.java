@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.ClientDetails;
 
 import com.sixliu.app.BaseTest;
-import com.sixliu.app.user.authority.ClientDetailsServiceImpl;
+import com.sixliu.app.user.config.ClientDetailsServiceImpl;
 
 /**
 *@author:MG01867

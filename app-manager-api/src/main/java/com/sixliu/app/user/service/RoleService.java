@@ -22,6 +22,9 @@ import com.sixliu.app.user.dto.RoleDTO;
 @RequestMapping("/role")
 public interface RoleService {
 
+	@RequestMapping(value = "/get", method = RequestMethod.POST)
+	RoleDTO get(@RequestParam(name="id") String id);
+	
 	@RequestMapping(value = "/listByAppId", method = RequestMethod.POST)
 	List<RoleDTO> listByAppId(@RequestParam(name="appId") String appId);
 }

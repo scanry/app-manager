@@ -15,8 +15,6 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import com.sixliu.app.user.authority.ClientDetailsServiceImpl;
-import com.sixliu.app.user.authority.UserDetailsServiceImpl;
 
 /**
  * @author:MG01867

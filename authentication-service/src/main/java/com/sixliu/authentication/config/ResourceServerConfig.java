@@ -1,4 +1,4 @@
-package com.sixliu.app.user.config;
+package com.sixliu.authentication.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;

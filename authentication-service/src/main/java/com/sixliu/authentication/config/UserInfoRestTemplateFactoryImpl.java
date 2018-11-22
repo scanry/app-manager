@@ -1,4 +1,4 @@
-package com.sixliu.app.user.config;
+package com.sixliu.authentication.config;
 
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoRestTemplateFactory;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;

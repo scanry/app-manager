@@ -1,4 +1,4 @@
-package com.sixliu.app.user.config;
+package com.sixliu.authentication.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

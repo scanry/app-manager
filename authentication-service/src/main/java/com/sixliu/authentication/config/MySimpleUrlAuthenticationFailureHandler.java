@@ -1,4 +1,4 @@
-package com.sixliu.app.user.config;
+package com.sixliu.authentication.config;
 
 import java.io.IOException;
 
